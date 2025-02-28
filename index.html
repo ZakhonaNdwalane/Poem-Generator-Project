@@ -7,43 +7,47 @@
     <title>AI Poem Generator</title>
   </head>
   <body>
-    <header>
-      <h1>Welcome to the AI Poem Generator</h1>
-    </header>
+    <div class="container">
+      <header>
+        <h1>Welcome to the AI Poem Generator</h1>
+      </header>
 
-    <main>
-      <form>
-        <input
-          type="text"
-          placeholder="Enter the topic of an English Poem"
-          autofocus
-          required
-          autocomplete="off"
-        />
-        <input type="submit" />
-      </form>
-      <div>
-        The tomb says to the rose
-        <br />
-        of the tears with which the dawn waters you
-      </div>
-    </main>
+      <main>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter the topic of an English Poem"
+            autofocus
+            required
+            autocomplete="off"
+            class="instructions"
+          />
+          <input type="submit" class="submit-button" />
+        </form>
+        <div class="poem">
+          The tomb says to the rose
+          <br />
+          of the tears with which the dawn waters you
+        </div>
+      </main>
 
-    <footer>
-      This AI project was coded by
-      <a href="https://github.com/ZakhonaNdwalane" target="_blank">
-        <strong>Zakhona Ndwalane</strong>
-      </a>
-      and is
-      <a
-        href="https://github.com/ZakhonaNdwalane/Poem-Generator-Project"
-        target="_blank"
-      >
-        open-sourced on GitHub</a
-      >
-      and is hosted on
-      <a href="https://poem-generator-project.app/" target="_blank">Netlify</a>.
-    </footer>
+      <footer>
+        This AI project was coded by
+        <a href="https://github.com/ZakhonaNdwalane" target="_blank">
+          <strong>Zakhona Ndwalane</strong>
+        </a>
+        is
+        <a
+          href="https://github.com/ZakhonaNdwalane/Poem-Generator-Project"
+          target="_blank"
+        >
+          open-sourced on GitHub</a
+        >
+        and is hosted on
+        <a href="https://poem-generator-project.app/" target="_blank">Netlify</a
+        >.
+      </footer>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>
