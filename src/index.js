@@ -1,16 +1,27 @@
+function displayPoem(response) {
+  //   console.log("Poem Generated");
+  new Typewriter("#poem", {
+    strings: response.data.answer,
+    autoStart: true,
+    display: 1,
+    cursor: "",
+  });
+}
+
 function generatePoem(event) {
   event.preventDefault();
 
-  alert("Generating poem...");
-  let poemElement = document.querySelector("#poem");
-  poemElement.innerHTML = "The tomb says to the rose of the tears with which the dawn waters you, 'If I were a rose, I would be like you, if you were a tomb.'";
+  let instructionInput = document.querySelector("#user-instructions");
+  let apikey = "c4d9be47o0b370b37f28te5a42babf6c";
+  let context =
+    "You are a romantic poem expert and love to write short poems. Your mission is to generate a 4 line poem in basic HTML and seperate each line with a < br/>. Make sure to follow the user instructions. Do not include a title to the poem. Sign the poem with 'SheCodes AI' in bold";
+  let prompt = `user instruction: Generate a poem about ${instructionInput.value}`;
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apikey}`;
 
-//   new Typewriter("#poem", {
-//     strings: "The tomb says to the rose of the tears with which the dawn waters you, 'If I were a rose, I would be like you, if you were a tomb.'",
-//     autoStart: true,
-//     delay: 1,
-//     cursor: "",
-//   });
+  //   console.log("Generating a Poem");
+  //   console.log(`prompt: ${prompt}`);
+  //   console.log(`context: ${context}`);
+  axios.get(apiUrl).then(displayPoem);
 }
 
 let poemFormElement = document.querySelector("#poem-generator-form");
